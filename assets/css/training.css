@@ -1,0 +1,111 @@
+/* Container for the gallery section */
+.containerGallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Flexible columns */
+    gap: 15px;  /* Space between images */
+    padding: 20px;
+    justify-items: center;  /* Center images */
+}
+
+/* Style for individual image containers */
+.image-container {
+    position: relative;
+    width: 100%;  /* Ensure full width in each grid item */
+    height: 200px; /* Fixed height for all images */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+/* Make sure images cover the entire container without distortion */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Image container hover effect */
+.image-container:hover {
+    transform: scale(1.05);
+}
+
+/* Style for the delete button (admin only) */
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Style for the delete button on hover */
+.delete-btn:hover {
+    background-color: red;
+}
+
+/* Style for the upload form */
+.upload-form {
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+}
+
+/* Form inputs and button styling */
+.upload-form input[type="file"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.upload-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-form button:hover {
+    background-color: #45a049;
+}
+
+/* Title and separator styling */
+.mv {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.mv h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.line {
+    width: 50px;
+    height: 2px;
+    background-color: #4CAF50;
+    margin: 0 auto;
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .containerGallery {
+        grid-template-columns: 1fr;  /* Stack images on small screens */
+        padding: 10px;
+    }
+
+    .upload-form {
+        width: 90%;
+    }
+}

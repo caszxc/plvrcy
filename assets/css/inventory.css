@@ -1,0 +1,154 @@
+h1 {
+    text-align: center;
+    color: #444;
+    margin: 20px 0;
+}
+
+/* Table Styles */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #0073e6;
+    color: #fff;
+}
+
+thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Target only the Description column */
+tbody td:nth-child(4) {
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    max-width: 250px; /* Optional: Limit column width */
+}
+
+
+tbody img {
+    border-radius: 4px;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 5px;
+    color: #fff;
+    background-color: #0073e6;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn-con {
+    width: 90%;
+    margin: 20px auto;
+}
+
+#add_btn {
+    float: right;
+    font-size: 16px;
+}
+
+
+.button:hover {
+    background-color: #005bb5;
+}
+
+button:disabled,
+.button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 14px; /* Reduce font size for better fit */
+    }
+
+    thead th {
+        display: none; /* Hide table header for smaller screens */
+    }
+
+    tbody tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    tbody td:before {
+        content: attr(data-label); /* Use data-label attribute for pseudo-labels */
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    tbody td:nth-child(4) {
+        max-width: unset;
+    }
+    
+    tbody td img {
+        display: block; /* Makes sure the image is treated as a block-level element */
+        margin: 10px auto; /* Center the image horizontally */
+        max-width: 80%; /* Limit the image size to 80% of the screen width */
+        width:  100PX;
+        height: 100PX; /* Maintain aspect ratio */
+        border-radius: 8px; /* Optional: rounded corners for the image */
+    }
+
+    #add_btn {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Smaller devices */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    tbody td img {
+        max-width: 50px; /* Scale down images further */
+    }
+}
